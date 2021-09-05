@@ -1,0 +1,13 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "markflegg-website",
+  "bundledWebRuntime": false,
+  "npmClient": "yarn",
+  "webDir": "../../dist/apps/markflegg-website",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}
