@@ -1,6 +1,6 @@
 {
   "name": "markflegg-website",
   "devDependencies": {
-    "@capacitor/cli": "^2.4.5"
+    "@capacitor/cli": "^3.2.2"
   }
 }
