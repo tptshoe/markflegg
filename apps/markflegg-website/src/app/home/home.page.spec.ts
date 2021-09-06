@@ -20,7 +20,7 @@ describe('HomePage', () => {
     })
   );
 
-  it('should create', () => {
+  it('should create succesfully', () => {
     expect(component).toBeTruthy();
   });
 });
