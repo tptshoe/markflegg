@@ -24,5 +24,7 @@ jobs:
       # run affected tests
       - name: Run Affected Unit Tests
         shell: bash
-      - run: yarn run affected:test -- --base=remotes/origin/main
-      - run: yarn run affected:e2e -- --base=remotes/origin/main
+        run: yarn run affected:test -- --base=remotes/origin/main
+      - name: Run Affected E2E Tests
+        shell: bash
+        run: yarn run affected:e2e -- --base=remotes/origin/main
