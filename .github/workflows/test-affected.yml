@@ -28,4 +28,4 @@ jobs:
       # run affected E2E tests
       - name: Run Affected E2E Tests
         shell: bash
-        run: yarn run affected:e2e -- --base=remotes/origin/main
+        run: yarn run affected:e2e -- --base=remotes/origin/main --headless
