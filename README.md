@@ -1,4 +1,4 @@
-
+[![All Tests](https://github.com/tptshoe/markflegg/actions/workflows/all-tests.yml/badge.svg?branch=main)](https://github.com/tptshoe/markflegg/actions/workflows/all-tests.yml)
 
 # Markflegg
 
@@ -78,8 +78,6 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-
 
 ## ☁ Nx Cloud
 
