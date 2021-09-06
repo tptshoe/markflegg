@@ -1,6 +1,8 @@
 name: Test Affected
-on: push
- branches-ignore: 'main'
+on:
+  push:
+    branches-ignore:
+      - 'main'
 jobs:
   run-tests:
     runs-on: ubuntu-latest
