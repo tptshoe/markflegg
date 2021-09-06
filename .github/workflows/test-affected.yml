@@ -1,5 +1,5 @@
 name: Test Affected
-on: [push]
+on: push
  branches-ignore: 'main'
 jobs:
   run-tests:
