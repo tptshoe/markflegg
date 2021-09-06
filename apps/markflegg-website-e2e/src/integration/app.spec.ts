@@ -12,10 +12,6 @@ describe('markflegg-website', () => {
   });
 
   it('should display testing message', () => {
-    // Custom command example, see `../support/commands.ts` file
-    cy.login('my-email@something.com', 'myPassword');
-
-    // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains(`This line should pass e2e tests`);
+    cy.contains(`This line should pass e2e tests`);
   });
 });
