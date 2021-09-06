@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  constructor() {}
+  constructor() {
+    console.log('This is just triggering a change to code affecting a test');
+  }
 }
