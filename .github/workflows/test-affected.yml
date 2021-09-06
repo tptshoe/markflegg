@@ -1,0 +1,18 @@
+name: Test Affected
+on: [push]
+ branches-ignore: 'main'
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with: fetch-depth: 0
+      # Install NPM dependencies, cache them correctly
+      - name: Dependencies
+        run: git fetch origin main
+        run: yarn
+      # run affected tests
+      - name: Run Affected Unit Tests
+        shell: bash
+        run: yarn run affected:test -- --base=remotes/origin/main
