@@ -23,4 +23,14 @@ describe('HomePage', () => {
   it('should create succesfully', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have a class member called modules that is an array', () => {
+    expect(component.modules instanceof Array).toBe(true);
+  });
+
+  it('the modules class member should contain 5 modules after ngOnInit has been triggered', () => {
+    component.ngOnInit();
+
+    expect(component.modules.length).toBe(5);
+  });
 });

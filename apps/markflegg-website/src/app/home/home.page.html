@@ -4,13 +4,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Mark V Flegg</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <div id="container">
-    <h1>Mark Flegg's Website</h1>
-    <h2>This line should pass e2e tests</h2>
-  </div>
+  <ion-list class="module-list">
+    <ion-item *ngFor="let module of modules">{{ module.title }}</ion-item>
+  </ion-list>
 </ion-content>
