@@ -10,6 +10,6 @@ describe('Home', () => {
   });
 
   it('the list of modules should contain the titles of the modules', () => {
-    getModuleListItems().first().should('contain.text', 'Module One');
+    getModuleListItems().last().should('contain.text', 'Module Five');
   });
 });
