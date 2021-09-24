@@ -12,3 +12,15 @@ This should all be inferable by looking at the git history, but for the purpose 
 - Using [Nxtend](https:nxtend.dev), created an ionic application (markflegg-website) to hold my future personal website
 - Nxtend installs a quite outdated version of Capacitor in Ionic, so I upgraded both Ionic and Capacitor to their latest versions (as of Sept 2021, Ionic: 5.30.0, Capacitor: 3.2.2, Angular: 11.0.0)
 - Following (mostly) tutorials at [Elite Ionic](https://eliteionic.com/), I set the repo up with some project management infrastructure, plus Continuous Integration.
+
+## Operating Commands
+
+### Testing
+
+#### End to End
+
+To run E2E tests:
+
+- `nx e2e markflegg-website-e2e` - This is the base run command.
+- - Add --watch flag to run in watch mode
+- - Add --headless flag to run headless (no browser window opens up)
