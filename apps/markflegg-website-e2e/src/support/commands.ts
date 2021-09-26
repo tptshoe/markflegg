@@ -13,6 +13,7 @@ declare namespace Cypress {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface Chainable<Subject> {
     navigateToHomePage(): typeof navigateToHomePage;
+    navigateToLessonSelectPage(): typeof navigateToLessonSelectPage;
     login(email: string, password: string): void;
   }
 }
@@ -35,4 +36,9 @@ Cypress.Commands.add('login', (email, password) => {
 function navigateToHomePage(): void {
   cy.visit('/');
 }
+function navigateToLessonSelectPage(): void {
+  cy.visit('/');
+}
+
 Cypress.Commands.add('navigateToHomePage', navigateToHomePage);
+Cypress.Commands.add('navigateToLessonSelectPage', navigateToLessonSelectPage);
