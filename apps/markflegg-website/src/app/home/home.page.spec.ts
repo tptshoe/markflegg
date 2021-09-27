@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, NavController } from '@ionic/angular';
+import { navControllerSpy } from '../mocks/mocks-ionic';
 
 import { HomePage } from './home.page';
 
@@ -11,6 +12,7 @@ describe('HomePage', () => {
     waitForAsync(() => {
       TestBed.configureTestingModule({
         declarations: [HomePage],
+        providers: [{ provide: NavController, useValue: navControllerSpy }],
         imports: [IonicModule.forRoot()],
       }).compileComponents();
 
@@ -32,5 +34,16 @@ describe('HomePage', () => {
     component.ngOnInit();
 
     expect(component.modules.length).toBe(5);
+  });
+
+  it('the openModule() function should navigate to the LessonListPage', () => {
+    const navCtl = fixture.debugElement.injector.get(NavController);
+    const testModule = { title: 'fake module', id: 1 };
+
+    component.openModule(testModule.id);
+
+    expect(navCtl.navigateForward).toHaveBeenCalledWith(
+      '/module/' + testModule.id
+    );
   });
 });
