@@ -62,15 +62,32 @@ describe('LessonSelectComponent', () => {
       title: 'test',
       description: 'test',
       lessons: [
-        { title: 'lesson 1' },
-        { title: 'lesson 2' },
-        { title: 'lesson 3' },
-        { title: 'lesson 4' },
+        { id: 1, title: 'lesson 1', content: 'hello1' },
+        { id: 2, title: 'lesson 2', content: 'hello2' },
+        { id: 3, title: 'lesson 3', content: 'hello3' },
+        { id: 4, title: 'lesson 4', content: 'hello4' },
       ],
     });
 
     component.ngOnInit();
 
     expect(component.module.lessons.length).toBe(4);
+  });
+
+  it('the openLesson() function should navigate to the LessonPage', () => {
+    const navCtrl = fixture.debugElement.injector.get(NavController);
+    component.module = {
+      id: 1,
+      title: '',
+      description: '',
+      lessons: [],
+    };
+    const testLesson = { id: 1, title: 'lesson1', content: 'helloThere' };
+
+    component.openLesson(testLesson);
+
+    expect(navCtrl.navigateForward).toHaveBeenCalledWith(
+      '/module/1/lesson/' + testLesson.id
+    );
   });
 });

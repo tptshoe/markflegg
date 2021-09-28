@@ -18,31 +18,31 @@ export class HomePage implements OnInit {
         id: 1,
         title: 'Module One',
         description: 'Test',
-        lessons: [{ title: '1' }],
+        lessons: [{ id: 1, title: '1', content: 'hello1' }],
       },
       {
         id: 2,
         title: 'Module Two',
         description: 'Test',
-        lessons: [{ title: '1' }],
+        lessons: [{ id: 2, title: '1', content: 'hello2' }],
       },
       {
         id: 3,
         title: 'Module Three',
         description: 'Test',
-        lessons: [{ title: '1' }],
+        lessons: [{ id: 3, title: '1', content: 'hello3' }],
       },
       {
         id: 4,
         title: 'Module Four',
         description: 'Test',
-        lessons: [{ title: '1' }],
+        lessons: [{ id: 4, title: '1', content: 'hello4' }],
       },
       {
         id: 5,
         title: 'Module Five',
         description: 'Test',
-        lessons: [{ title: '1' }],
+        lessons: [{ id: 5, title: '1', content: 'hello5' }],
       },
     ];
   }

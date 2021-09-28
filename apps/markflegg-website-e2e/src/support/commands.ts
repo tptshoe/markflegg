@@ -8,13 +8,18 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 
-// eslint-disable-next-line @typescript-eslint/no-namespace
-declare namespace Cypress {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  interface Chainable<Subject> {
-    navigateToHomePage(): typeof navigateToHomePage;
-    navigateToLessonSelectPage(): typeof navigateToLessonSelectPage;
-    login(email: string, password: string): void;
+import { getLessonListItems, getModuleListItems } from './utils';
+
+declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
+  namespace Cypress {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    interface Chainable<Subject> {
+      navigateToHomePage(): typeof navigateToHomePage;
+      navigateToLessonSelectPage(): typeof navigateToLessonSelectPage;
+      navigateToLessonPage(): typeof navigateToLessonPage;
+      login(email: string, password: string): void;
+    }
   }
 }
 //
@@ -38,7 +43,13 @@ function navigateToHomePage(): void {
 }
 function navigateToLessonSelectPage(): void {
   cy.visit('/');
+  getModuleListItems().first().click();
+}
+function navigateToLessonPage(): void {
+  navigateToLessonSelectPage();
+  getLessonListItems().first().click();
 }
 
 Cypress.Commands.add('navigateToHomePage', navigateToHomePage);
 Cypress.Commands.add('navigateToLessonSelectPage', navigateToLessonSelectPage);
+Cypress.Commands.add('navigateToLessonPage', navigateToLessonPage);

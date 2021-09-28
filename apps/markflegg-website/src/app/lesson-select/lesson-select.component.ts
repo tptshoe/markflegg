@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
+import { Lesson } from '../interfaces/lesson';
 import { Module } from '../interfaces/module';
 import { ModulesService } from '../services/modules/modules.service';
 
@@ -26,5 +27,11 @@ export class LessonSelectComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.module = this.modulesService.getModuleById(parseInt(id));
+  }
+
+  openLesson(lesson: Lesson) {
+    this.navCtrl.navigateForward(
+      `/module/${this.module.id}/lesson/${lesson.id}`
+    );
   }
 }
